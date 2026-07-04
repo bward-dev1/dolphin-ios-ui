@@ -3,6 +3,7 @@
 
 #import "NetPlaySetupViewController.h"
 
+#import "FoundationStringUtil.h"
 #import "GameFileCacheManager.h"
 #import "GameFilePtrWrapper.h"
 #import "NetPlayLobbyViewController.h"
@@ -192,11 +193,12 @@
   NPGamePickerViewController* picker = [[NPGamePickerViewController alloc] init];
   __weak NetPlaySetupViewController* weakSelf = self;
   picker.onPick = ^(GameFilePtrWrapper* _Nullable game) {
-    if (game != nil) {
-      weakSelf->_selectedGame = game;
-      [weakSelf->_chooseGameButton setTitle:CppToFoundationString(game.gameFile->GetInternalName())
-                                    forState:UIControlStateNormal];
-      [weakSelf updateActionButtonEnabled];
+    __strong NetPlaySetupViewController* strongSelf = weakSelf;
+    if (strongSelf != nil && game != nil) {
+      strongSelf->_selectedGame = game;
+      [strongSelf->_chooseGameButton setTitle:CppToFoundationString(game.gameFile->GetInternalName())
+                                      forState:UIControlStateNormal];
+      [strongSelf updateActionButtonEnabled];
     }
   };
   UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:picker];
