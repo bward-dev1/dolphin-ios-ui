@@ -19,6 +19,22 @@
 @implementation NetPlayPlayerInfo
 @end
 
+// IOSNetPlayUI (below) calls these from NetPlay's networking thread. They're implementation
+// detail - not declared in NetPlayManager.h, which stays free of C++ types so it's safe for
+// Swift/ObjC-only contexts (e.g. the bridging header) to import.
+@interface NetPlayManager ()
+
+- (void)handleRefresh;
+- (void)handleAppendChat:(const std::string&)msg;
+- (void)handleStatus:(const std::string&)msg;
+- (void)handleHostCodeResolved:(const std::string&)hostId;
+- (void)handleBootGame:(const std::string&)filename sessionData:(std::unique_ptr<BootSessionData>)sessionData;
+- (void)handleGameStarting;
+- (void)handleStopGame;
+- (void)handleSetHostWiiSyncData:(std::vector<u64>)titles redirectFolder:(std::string)redirectFolder;
+
+@end
+
 namespace
 {
 // Bridges Dolphin's NetPlay::NetPlayUI callback interface (called from NetPlay's own
