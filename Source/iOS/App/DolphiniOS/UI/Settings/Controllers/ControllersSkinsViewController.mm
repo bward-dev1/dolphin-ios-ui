@@ -61,7 +61,7 @@ static NSString* const kCellReuseIdentifier = @"ControllersSkinsCell";
 #pragma mark - Import
 
 - (void)presentImportPicker {
-  NSArray<UTType*>* types = @[ UTType.folderType ];
+  NSArray<UTType*>* types = @[ [UTType typeWithIdentifier:@"public.folder"] ];
   UIDocumentPickerViewController* pickerController =
       [[UIDocumentPickerViewController alloc] initForOpeningContentTypes:types];
   pickerController.delegate = self;
@@ -123,7 +123,7 @@ static NSString* const kCellReuseIdentifier = @"ControllersSkinsCell";
       name = @"My Skin";
     }
 
-    NSString* finalName = [[TCSkinManager shared] createSkinTemplateSuggestedName:name];
+    NSString* finalName = [[TCSkinManager shared] createSkinTemplateWithSuggestedName:name];
     if (finalName == nil) {
       return;
     }

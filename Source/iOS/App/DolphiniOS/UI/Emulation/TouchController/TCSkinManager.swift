@@ -68,7 +68,7 @@ import UIKit
     return items.filter { isSkinPresent($0) }.sorted()
   }
 
-  @objc @discardableResult func deleteSkin(named name: String) -> Bool {
+  @objc(deleteSkinNamed:) @discardableResult func deleteSkin(named name: String) -> Bool {
     let path = skinsFolder.stringByAppendingPathComponent(name)
 
     guard (try? FileManager.default.removeItem(atPath: path)) != nil else {
@@ -86,7 +86,7 @@ import UIKit
   // UIDocumentPickerViewController), copying its contents under Skins/<name>. Returns the
   // final skin name used (de-duplicated if one already exists with that name), or nil on
   // failure.
-  @objc func importSkin(fromFolder sourcePath: String, suggestedName: String) -> String? {
+  @objc(importSkinFromFolder:suggestedName:) func importSkin(fromFolder sourcePath: String, suggestedName: String) -> String? {
     ensureSkinsFolderExists()
 
     var finalName = suggestedName
@@ -108,7 +108,7 @@ import UIKit
   // Creates a starter skin pre-populated with every current default button/stick image,
   // correctly named, so a user can open individual PNGs in an editor and repaint over them
   // without having to guess filenames. Returns the final skin name used, or nil on failure.
-  @objc func createSkinTemplate(suggestedName: String) -> String? {
+  @objc(createSkinTemplateWithSuggestedName:) func createSkinTemplate(suggestedName: String) -> String? {
     ensureSkinsFolderExists()
 
     var finalName = suggestedName
