@@ -1,10 +1,46 @@
-# DolphiniOS
+# DolphiniOS (bward-dev1 fork)
 
-DolphiniOS is a port of the Dolphin Emulator to iOS and iPadOS. For installation instructions and downloads, check [our website](https://dolphinios.oatmealdome.me).
+A fork of [OatmealDome's DolphiniOS](https://github.com/OatmealDome/dolphin-ios) — Dolphin, the
+GameCube/Wii emulator, for iOS and iPadOS — with a batch of features layered on top:
 
-This is the repository for the new DolphiniOS codebase.
+* **Wii motion calibration** — "Calibrate Gyroscope" (lay the device flat, zeroes out drift) and
+  "Calibrate Gyroscope for TV" (point at your TV, recenters the pointer to face it). Fixes a
+  motion-pointing pipeline that was silently broken in three places in upstream's iOS build.
+* **Controller skins** — drop PNGs into a `Skins/<name>/` folder (via the Files app) to reskin
+  the on-screen touch controller. Partial skins fall back to the default art per-image, and
+  there's a one-tap "create a starter skin from the current artwork" so you never have to guess
+  filenames.
+* **NetPlay** — host or join a real multiplayer session (traversal host-code or direct IP/UPnP),
+  with a live lobby, chat, and player list, from *Play Together...* in the game list's menu.
+  Every player still needs their own copy of the ROM (Dolphin's netplay is lockstep, not
+  streaming).
+* **Remote Controller (DSU)** — turn a second device on the same WiFi into a motion+button
+  controller for a game running on a *host* device, using Dolphin's own CemuHook-compatible DSU
+  protocol (the core already ships a full DSU client; this exposes it on iOS and adds a DSU
+  *server* mode so a second device can feed it). The second device needs neither the ROM nor the
+  RAM/storage to run the game — only the host does the emulating. See *Remote Controller
+  Mode...* in the game list's menu, and *Settings > Controllers > Remote Controller (DSU)* on
+  the host.
+* **Rainbow app icon** — the dolphin, same pose and outline, filled with vertical ROYGBIV
+  stripes.
 
 ## Building
+
+This fork builds via GitHub Actions (`.github/workflows/build.yml`) on a GitHub-hosted
+`macos-15` runner — no local Xcode install, Apple Developer account, or code-signing setup is
+needed to get an installable IPA. Trigger a build against any branch with:
+
+```sh
+gh workflow run build.yml --ref <branch>
+```
+
+The run uploads a single artifact containing an ad-hoc-signed `Non-Jailbroken.ipa` (sideload via
+[AltStore](https://altstore.io)/[SideStore](https://sidestore.io)), a `TrollStore.tipa` (if the
+device already has [TrollStore](https://github.com/opa334/TrollStore)), and Jailbroken
+`.deb`s (rootful/rootless, via Sileo/Zebra) — grab it from the run's Artifacts section, or with
+`gh run download <run-id>`, and install whichever variant matches your device.
+
+### Building locally instead
 
 You will need the following:
 
