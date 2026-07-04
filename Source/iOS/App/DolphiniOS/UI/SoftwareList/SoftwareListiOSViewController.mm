@@ -23,6 +23,7 @@
 #import "ImportFileManager.h"
 #import "LocalizationUtil.h"
 #import "NetPlaySetupViewController.h"
+#import "RemoteControllerViewController.h"
 
 typedef NS_ENUM(NSInteger, DOLSoftwareListDocumentPickerType) {
   DOLSoftwareListDocumentPickerTypeImportSoftware,
@@ -134,6 +135,9 @@ typedef NS_ENUM(NSInteger, DOLSoftwareListDocumentPickerType) {
     [UIMenu menuWithTitle:@"" image:nil identifier:nil options:UIMenuOptionsDisplayInline children:@[
       [UIAction actionWithTitle:@"Play Together..." image:[UIImage systemImageNamed:@"person.2.fill"] identifier:nil handler:^(UIAction*) {
         [self playTogetherTapped];
+      }],
+      [UIAction actionWithTitle:@"Remote Controller Mode..." image:[UIImage systemImageNamed:@"gamecontroller"] identifier:nil handler:^(UIAction*) {
+        [self remoteControllerModeTapped];
       }]
     ]],
     [UIAction actionWithTitle:DOLCoreLocalizedString(@"Open") image:[UIImage systemImageNamed:@"externaldrive"] identifier:nil handler:^(UIAction*) {
@@ -149,6 +153,13 @@ typedef NS_ENUM(NSInteger, DOLSoftwareListDocumentPickerType) {
 - (void)playTogetherTapped {
   NetPlaySetupViewController* setup = [[NetPlaySetupViewController alloc] init];
   UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:setup];
+  nav.modalPresentationStyle = UIModalPresentationFullScreen;
+  [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (void)remoteControllerModeTapped {
+  RemoteControllerViewController* remote = [[RemoteControllerViewController alloc] init];
+  UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:remote];
   nav.modalPresentationStyle = UIModalPresentationFullScreen;
   [self presentViewController:nav animated:YES completion:nil];
 }

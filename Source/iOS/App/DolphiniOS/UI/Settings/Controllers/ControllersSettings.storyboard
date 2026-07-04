@@ -606,6 +606,31 @@
                                             <segue destination="EA8-mw-mRC" kind="show" id="XyP-RQ-r7T"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="P84-ta-KzA">
+                                        <rect key="frame" x="16" y="203" width="343" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P84-ta-KzA" id="Rwv-a7-onm">
+                                            <rect key="frame" x="0.0" y="0.0" width="316.5" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Remote Controller (DSU)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="126-nn-YXi">
+                                                    <rect key="frame" x="16" y="11" width="284.5" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="126-nn-YXi" firstAttribute="leading" secondItem="Rwv-a7-onm" secondAttribute="leadingMargin" id="IVq-r5-fft"/>
+                                                <constraint firstItem="126-nn-YXi" firstAttribute="top" secondItem="Rwv-a7-onm" secondAttribute="topMargin" id="meQ-ii-nj4"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="126-nn-YXi" secondAttribute="trailing" id="nfN-dM-Gt8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="126-nn-YXi" secondAttribute="bottom" id="q7A-qd-LYT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="FtO-kn-r2U" kind="show" id="QRp-eG-1NC"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -739,6 +764,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P80-Or-gNc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3231" y="1200"/>
+        </scene>
+        <!--Remote Controller DSU-->
+        <scene sceneID="TPU-Sb-JRl">
+            <objects>
+                <tableViewController id="FtO-kn-r2U" customClass="ControllersDSUViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="Pr4-Zv-zF3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <sections>
+                            <tableViewSection id="FBm-HC-My6">
+                                <cells/>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="FtO-kn-r2U" id="NZG-Gc-iGb"/>
+                            <outlet property="delegate" destination="FtO-kn-r2U" id="boj-UD-o0d"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Remote Controller (DSU)" largeTitleDisplayMode="never" id="Djz-lz-Y7A"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TDd-pq-HPe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3231" y="1600"/>
         </scene>
     </scenes>
 </document>
