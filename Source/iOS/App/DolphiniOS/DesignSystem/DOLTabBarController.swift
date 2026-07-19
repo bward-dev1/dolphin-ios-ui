@@ -58,7 +58,11 @@ final class DOLTabBarController: UITabBarController {
     appearance.compactInlineLayoutAppearance = itemAppearance
 
     tabBar.standardAppearance = appearance
-    tabBar.scrollEdgeAppearance = appearance
+    if #available(iOS 15.0, *) {
+      // scrollEdgeAppearance doesn't exist on iOS 14, Tier 1's floor —
+      // standardAppearance alone still applies there.
+      tabBar.scrollEdgeAppearance = appearance
+    }
     tabBar.tintColor = DOLColor.accentSolid
   }
 }
