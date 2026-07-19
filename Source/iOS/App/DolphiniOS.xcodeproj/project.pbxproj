@@ -174,6 +174,12 @@
 		B9809C722A4970A700877579 /* Gecko.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9809C712A4970A700877579 /* Gecko.storyboard */; };
 		B9809C762A49F78700877579 /* GeckoCodeEditViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9809C752A49F78700877579 /* GeckoCodeEditViewController.mm */; };
 		B9809C792A4A166D00877579 /* DOLSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9809C782A4A166C00877579 /* DOLSwitch.swift */; };
+		EDC7912220C09527038627D9 /* DOLColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3046EE2F29D94DDCCC86F5 /* DOLColor.swift */; };
+		5BEB73ED24F5369F2792383E /* DOLSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4063C066D26D56FDBAB76F /* DOLSpacing.swift */; };
+		4DE810AC306E093D77617A44 /* DOLTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C9A12D9E82530BB3EC3B5C /* DOLTypography.swift */; };
+		C8AEB9FF56CD5495559AAD3A /* GlassMaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9CE2E6B435CE00542975E1 /* GlassMaterialView.swift */; };
+		747EECDFC90CBDB2A102C876 /* DOLTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09382C304A9F01E5056870D3 /* DOLTabBarController.swift */; };
+		717CF26E744B41AD6F054BCA /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1E4FCB3CB2951A3D34F42 /* OnboardingViewController.swift */; };
 		B9809C7C2A4A180700877579 /* ActionReplay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9809C7B2A4A180700877579 /* ActionReplay.storyboard */; };
 		B9809C802A4A190C00877579 /* ActionReplayCodeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9809C7F2A4A190C00877579 /* ActionReplayCodeViewController.mm */; };
 		B9809C832A4A22EB00877579 /* ActionReplayCodeEditViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9809C822A4A22EB00877579 /* ActionReplayCodeEditViewController.mm */; };
@@ -215,7 +221,6 @@
 		B9D9389E283EF7AD00B290FC /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D9389D283EF7AD00B290FC /* MetalKit.framework */; };
 		B9D938A1283F23A000B290FC /* TCButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D938A0283F239F00B290FC /* TCButtonType.swift */; };
 		B9D938A728418AFE00B290FC /* TCManagerInterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9D938A628418AFD00B290FC /* TCManagerInterface.mm */; };
-		B9DC3E0427EFBD2D0084DAA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9DC3E0227EFBD2D0084DAA4 /* Main.storyboard */; };
 		B9DC3E0627EFBD2F0084DAA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9DC3E0527EFBD2F0084DAA4 /* Assets.xcassets */; };
 		B9DC3E0927EFBD2F0084DAA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9DC3E0727EFBD2F0084DAA4 /* LaunchScreen.storyboard */; };
 		B9DC5FAB28849535004BD94A /* GraphicsRootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DC5FAA28849535004BD94A /* GraphicsRootViewController.mm */; };
@@ -516,6 +521,14 @@
 		B9809C752A49F78700877579 /* GeckoCodeEditViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GeckoCodeEditViewController.mm; sourceTree = "<group>"; };
 		B9809C772A49F7D600877579 /* GeckoCodeEditViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeckoCodeEditViewControllerDelegate.h; sourceTree = "<group>"; };
 		B9809C782A4A166C00877579 /* DOLSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOLSwitch.swift; sourceTree = "<group>"; };
+		EE3046EE2F29D94DDCCC86F5 /* DOLColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOLColor.swift; sourceTree = "<group>"; };
+		7B4063C066D26D56FDBAB76F /* DOLSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOLSpacing.swift; sourceTree = "<group>"; };
+		A5C9A12D9E82530BB3EC3B5C /* DOLTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOLTypography.swift; sourceTree = "<group>"; };
+		1C9CE2E6B435CE00542975E1 /* GlassMaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassMaterialView.swift; sourceTree = "<group>"; };
+		09382C304A9F01E5056870D3 /* DOLTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOLTabBarController.swift; sourceTree = "<group>"; };
+		C0D1E4FCB3CB2951A3D34F42 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		E658062BA35A905AEA93A57F /* DESIGN_TOKENS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DESIGN_TOKENS.md; sourceTree = "<group>"; };
+		73CB66B2D427E2AB66962501 /* DesignTokens.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DesignTokens.json; sourceTree = "<group>"; };
 		B9809C7B2A4A180700877579 /* ActionReplay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActionReplay.storyboard; sourceTree = "<group>"; };
 		B9809C7E2A4A190C00877579 /* ActionReplayCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionReplayCodeViewController.h; sourceTree = "<group>"; };
 		B9809C7F2A4A190C00877579 /* ActionReplayCodeViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ActionReplayCodeViewController.mm; sourceTree = "<group>"; };
@@ -544,9 +557,7 @@
 		B991379A2881DC2200588446 /* UpdateStoryboardStrings.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = UpdateStoryboardStrings.sh; sourceTree = "<group>"; };
 		B991379F2881F23A00588446 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Core.strings; sourceTree = "<group>"; };
 		B99137A228825AA600588446 /* UpdateCoreStrings.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = UpdateCoreStrings.py; sourceTree = "<group>"; };
-		B99137A6288279AC00588446 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		B99137A8288279F000588446 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		B99137A928827A1400588446 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		B99137AA28827A1500588446 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B99137AB28827A1700588446 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Core.strings; sourceTree = "<group>"; };
 		B99137AD28827AD200588446 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SettingsRoot.storyboard; sourceTree = "<group>"; };
@@ -601,7 +612,6 @@
 		B9D938A528418AFD00B290FC /* TCManagerInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCManagerInterface.h; sourceTree = "<group>"; };
 		B9D938A628418AFD00B290FC /* TCManagerInterface.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TCManagerInterface.mm; sourceTree = "<group>"; };
 		B9DC3DF627EFBD2C0084DAA4 /* DolphiniOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DolphiniOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9DC3E0327EFBD2D0084DAA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9DC3E0527EFBD2F0084DAA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9DC3E0827EFBD2F0084DAA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9DC3E0A27EFBD2F0084DAA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1801,6 +1811,21 @@
 			path = Controls;
 			sourceTree = "<group>";
 		};
+		4D32C5708F0C430D0A10D921 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				E658062BA35A905AEA93A57F /* DESIGN_TOKENS.md */,
+				73CB66B2D427E2AB66962501 /* DesignTokens.json */,
+				EE3046EE2F29D94DDCCC86F5 /* DOLColor.swift */,
+				7B4063C066D26D56FDBAB76F /* DOLSpacing.swift */,
+				A5C9A12D9E82530BB3EC3B5C /* DOLTypography.swift */,
+				1C9CE2E6B435CE00542975E1 /* GlassMaterialView.swift */,
+				09382C304A9F01E5056870D3 /* DOLTabBarController.swift */,
+				C0D1E4FCB3CB2951A3D34F42 /* OnboardingViewController.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
 		B9D9389B283ECF0B00B290FC /* Controls */ = {
 			isa = PBXGroup;
 			children = (
@@ -1873,7 +1898,7 @@
 			isa = PBXGroup;
 			children = (
 				B900A7C427F4D4DE000361DD /* UI */,
-				B9DC3E0227EFBD2D0084DAA4 /* Main.storyboard */,
+				4D32C5708F0C430D0A10D921 /* DesignSystem */,
 				B9DC3E0527EFBD2F0084DAA4 /* Assets.xcassets */,
 				B9EFF8522E7F56790029F016 /* AppIcon_Glass.icon */,
 				B9EFF8562E7F5E540029F016 /* AppIconBeta_Glass.icon */,
@@ -2153,7 +2178,6 @@
 				B9FCB7C828976CE60020E233 /* JitWait.xib in Resources */,
 				B9B2C621288DB62D00CB6569 /* TCClassicWiiPad.xib in Resources */,
 				B9114F972893C5E600B9C57A /* DebugSettings.storyboard in Resources */,
-				B9DC3E0427EFBD2D0084DAA4 /* Main.storyboard in Resources */,
 				B9F41C3C2DC53699006D2434 /* cacert.pem in Resources */,
 				B904ACE828866E2D008B6BE9 /* ControllersSettings.storyboard in Resources */,
 				B96C5DC92CFE4B200046C029 /* Logger.ini in Resources */,
@@ -2321,6 +2345,12 @@
 				B991378B288149F100588446 /* WiiSoundViewController.mm in Sources */,
 				B950CFBF29620C8900197719 /* UpdateCheckService.swift in Sources */,
 				B9809C792A4A166D00877579 /* DOLSwitch.swift in Sources */,
+				EDC7912220C09527038627D9 /* DOLColor.swift in Sources */,
+				5BEB73ED24F5369F2792383E /* DOLSpacing.swift in Sources */,
+				4DE810AC306E093D77617A44 /* DOLTypography.swift in Sources */,
+				C8AEB9FF56CD5495559AAD3A /* GlassMaterialView.swift in Sources */,
+				747EECDFC90CBDB2A102C876 /* DOLTabBarController.swift in Sources */,
+				717CF26E744B41AD6F054BCA /* OnboardingViewController.swift in Sources */,
 				B904AD322888FF17008B6BE9 /* MappingGroupEditViewController.mm in Sources */,
 				B991377C28808D9000588446 /* GameCubeSystemLanguageViewController.mm in Sources */,
 				B95AC52C2D29BA7F0048E48B /* AudioMuteSwitchMode.swift in Sources */,
@@ -2510,16 +2540,6 @@
 				B99137C5288327BB00588446 /* ja */,
 			);
 			name = ConfigSettings.storyboard;
-			sourceTree = "<group>";
-		};
-		B9DC3E0227EFBD2D0084DAA4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B9DC3E0327EFBD2D0084DAA4 /* Base */,
-				B99137A6288279AC00588446 /* en */,
-				B99137A928827A1400588446 /* ja */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		B9DC3E0727EFBD2F0084DAA4 /* LaunchScreen.storyboard */ = {

@@ -16,6 +16,8 @@
 #import "BootNoticeManager.h"
 #import "UnofficialBuildNoticeViewController.h"
 
+#import "DolphiniOS-Swift.h"
+
 @implementation FirstRunInitializationService
 
 - (void)importDefaultProfileForInputConfig:(InputConfig*)config {
@@ -49,6 +51,7 @@
     
     Config::SetBase(Config::MAIN_GFX_BACKEND, "Metal");
     
+    [[BootNoticeManager shared] enqueueViewController:[[OnboardingViewController alloc] init]];
     [[BootNoticeManager shared] enqueueViewController:[[UnofficialBuildNoticeViewController alloc] initWithNibName:@"UnofficialBuildNotice" bundle:nil]];
   }
   

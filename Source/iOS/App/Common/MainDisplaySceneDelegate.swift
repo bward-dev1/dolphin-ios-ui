@@ -7,7 +7,14 @@ class MainDisplaySceneDelegate: UIResponder, UIWindowSceneDelegate {
   var window: UIWindow?
   
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-    MainSceneCoordinator.shared().mainScene = scene as? UIWindowScene
+    guard let windowScene = scene as? UIWindowScene else { return }
+
+    MainSceneCoordinator.shared().mainScene = windowScene
+
+    let newWindow = UIWindow(windowScene: windowScene)
+    newWindow.rootViewController = DOLTabBarController.makeRootTabBarController()
+    newWindow.makeKeyAndVisible()
+    window = newWindow
   }
   
   func sceneDidDisconnect(_ scene: UIScene) {
