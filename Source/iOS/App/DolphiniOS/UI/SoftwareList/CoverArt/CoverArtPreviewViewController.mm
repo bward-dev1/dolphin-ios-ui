@@ -3,6 +3,8 @@
 
 #import "CoverArtPreviewViewController.h"
 
+#import "Swift.h"
+
 #import "CoverArtDatabaseDownloader.h"
 #import "GameFilePtrWrapper.h"
 
@@ -33,7 +35,7 @@
   [super viewDidLoad];
 
   self.title = _title.name;
-  self.view.backgroundColor = [UIColor systemBackgroundColor];
+  self.view.backgroundColor = DOLDesignSystem.backgroundPrimary;
 
   self.navigationItem.rightBarButtonItem =
       [[UIBarButtonItem alloc] initWithTitle:@"Use This Cover"
@@ -44,6 +46,9 @@
 
   _imageView = [[UIImageView alloc] init];
   _imageView.contentMode = UIViewContentModeScaleAspectFit;
+  _imageView.clipsToBounds = YES;
+  _imageView.layer.cornerRadius = DOLDesignSystem.radiusMD;
+  _imageView.layer.cornerCurve = kCACornerCurveContinuous;
   _imageView.translatesAutoresizingMaskIntoConstraints = NO;
   [self.view addSubview:_imageView];
 
@@ -53,25 +58,29 @@
   [self.view addSubview:_spinner];
 
   _statusLabel = [[UILabel alloc] init];
-  _statusLabel.font = [UIFont systemFontOfSize:14];
-  _statusLabel.textColor = [UIColor secondaryLabelColor];
+  _statusLabel.font = DOLDesignSystem.fontCaption;
+  _statusLabel.textColor = DOLDesignSystem.textSecondary;
   _statusLabel.textAlignment = NSTextAlignmentCenter;
   _statusLabel.numberOfLines = 0;
   _statusLabel.translatesAutoresizingMaskIntoConstraints = NO;
   [self.view addSubview:_statusLabel];
 
+  CGFloat spacingLG = DOLDesignSystem.spacingLG;
+  CGFloat spacingXL = DOLDesignSystem.spacingXL;
+  CGFloat spacingMD = DOLDesignSystem.spacingMD;
+
   [NSLayoutConstraint activateConstraints:@[
-    [_imageView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:24],
-    [_imageView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:40],
-    [_imageView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-40],
+    [_imageView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:spacingLG],
+    [_imageView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:spacingXL],
+    [_imageView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-spacingXL],
     [_imageView.heightAnchor constraintEqualToConstant:320],
 
     [_spinner.centerXAnchor constraintEqualToAnchor:_imageView.centerXAnchor],
     [_spinner.centerYAnchor constraintEqualToAnchor:_imageView.centerYAnchor],
 
-    [_statusLabel.topAnchor constraintEqualToAnchor:_imageView.bottomAnchor constant:16],
-    [_statusLabel.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:24],
-    [_statusLabel.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-24],
+    [_statusLabel.topAnchor constraintEqualToAnchor:_imageView.bottomAnchor constant:spacingMD],
+    [_statusLabel.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:spacingLG],
+    [_statusLabel.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-spacingLG],
   ]];
 
   __weak CoverArtPreviewViewController* weakSelf = self;

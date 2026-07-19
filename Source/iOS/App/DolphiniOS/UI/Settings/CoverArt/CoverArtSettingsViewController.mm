@@ -5,6 +5,8 @@
 
 #import "Core/Config/UISettings.h"
 
+#import "Swift.h"
+
 #import "CoverArtDatabaseDownloader.h"
 
 typedef NS_ENUM(NSInteger, CoverArtRow) {
@@ -25,6 +27,7 @@ typedef NS_ENUM(NSInteger, CoverArtRow) {
   [super viewDidLoad];
 
   self.title = @"Cover Art";
+  self.view.backgroundColor = DOLDesignSystem.backgroundPrimary;
   [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 
   _autoDownloadSwitch = [[UISwitch alloc] init];
@@ -63,7 +66,9 @@ typedef NS_ENUM(NSInteger, CoverArtRow) {
   cell.accessoryView = nil;
   cell.accessoryType = UITableViewCellAccessoryNone;
   cell.selectionStyle = UITableViewCellSelectionStyleNone;
-  cell.textLabel.textColor = [UIColor labelColor];
+  cell.backgroundColor = DOLDesignSystem.backgroundSecondary;
+  cell.textLabel.font = DOLDesignSystem.fontBody;
+  cell.textLabel.textColor = DOLDesignSystem.textPrimary;
 
   if (indexPath.section == 0) {
     cell.textLabel.text = @"Automatically Download Cover Art";
@@ -106,13 +111,13 @@ typedef NS_ENUM(NSInteger, CoverArtRow) {
     _databaseCell.textLabel.text =
         [NSString stringWithFormat:@"Cancel Download (%ld / %ld)", (long)downloader.completedCount,
                                     (long)downloader.totalCount];
-    _databaseCell.textLabel.textColor = [UIColor systemRedColor];
+    _databaseCell.textLabel.textColor = DOLDesignSystem.destructive;
   } else if (_isEstimating) {
     _databaseCell.textLabel.text = @"Checking what's missing...";
-    _databaseCell.textLabel.textColor = [UIColor secondaryLabelColor];
+    _databaseCell.textLabel.textColor = DOLDesignSystem.textSecondary;
   } else {
     _databaseCell.textLabel.text = @"Download Entire Database...";
-    _databaseCell.textLabel.textColor = [UIColor labelColor];
+    _databaseCell.textLabel.textColor = DOLDesignSystem.accentSolid;
   }
 }
 

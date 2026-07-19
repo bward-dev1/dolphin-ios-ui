@@ -3,6 +3,8 @@
 
 #import "CoverArtPickerViewController.h"
 
+#import "Swift.h"
+
 #import "CoverArtDatabaseDownloader.h"
 #import "CoverArtPreviewViewController.h"
 #import "GameFilePtrWrapper.h"
@@ -32,6 +34,7 @@
   [super viewDidLoad];
 
   self.title = @"Change Cover";
+  self.view.backgroundColor = DOLDesignSystem.backgroundPrimary;
 
   self.navigationItem.leftBarButtonItem =
       [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
@@ -112,6 +115,12 @@
   if (cell == nil) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
   }
+
+  cell.backgroundColor = DOLDesignSystem.backgroundSecondary;
+  cell.textLabel.font = DOLDesignSystem.fontBody;
+  cell.textLabel.textColor = DOLDesignSystem.textPrimary;
+  cell.detailTextLabel.font = DOLDesignSystem.fontCaption;
+  cell.detailTextLabel.textColor = DOLDesignSystem.textSecondary;
 
   CoverArtTitle* title = _filteredTitles[indexPath.row];
   cell.textLabel.text = title.name;
