@@ -193,7 +193,6 @@
 		B99137952881D62C00588446 /* CpuEngineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B99137942881D62C00588446 /* CpuEngineCell.m */; };
 		B99137982881D68600588446 /* CpuEngineViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B99137972881D68600588446 /* CpuEngineViewController.mm */; };
 		B991379E2881F23A00588446 /* Core.strings in Resources */ = {isa = PBXBuildFile; fileRef = B99137A02881F23A00588446 /* Core.strings */; };
-		B99137AC28827AD200588446 /* SettingsRoot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B99137AE28827AD200588446 /* SettingsRoot.storyboard */; };
 		B99137B52882A58000588446 /* SoftwareList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B99137B72882A58000588446 /* SoftwareList.storyboard */; };
 		B99137BF288327AC00588446 /* ConfigSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B99137C1288327AC00588446 /* ConfigSettings.storyboard */; };
 		B99137C928832A0800588446 /* LocalizationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B99137C828832A0800588446 /* LocalizationUtil.m */; };
@@ -560,9 +559,6 @@
 		B99137A8288279F000588446 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B99137AA28827A1500588446 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B99137AB28827A1700588446 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Core.strings; sourceTree = "<group>"; };
-		B99137AD28827AD200588446 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SettingsRoot.storyboard; sourceTree = "<group>"; };
-		B99137B028827B0400588446 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SettingsRoot.strings; sourceTree = "<group>"; };
-		B99137B228827B8700588446 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/SettingsRoot.strings; sourceTree = "<group>"; };
 		B99137B328827BF300588446 /* TransferCoreStringsToStoryboard.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = TransferCoreStringsToStoryboard.py; sourceTree = "<group>"; };
 		B99137B62882A58000588446 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SoftwareList.storyboard; sourceTree = "<group>"; };
 		B99137B92882A58800588446 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SoftwareList.strings; sourceTree = "<group>"; };
@@ -1207,7 +1203,6 @@
 				B9114F952893C5D600B9C57A /* Debug */,
 				B9DC5FA628849467004BD94A /* Graphics */,
 				B904ACF22886AAED008B6BE9 /* Mapping */,
-				B99137AE28827AD200588446 /* SettingsRoot.storyboard */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -2117,7 +2112,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9809C722A4970A700877579 /* Gecko.storyboard in Resources */,
-				B99137AC28827AD200588446 /* SettingsRoot.storyboard in Resources */,
 				B991379E2881F23A00588446 /* Core.strings in Resources */,
 				B9B2C624288DB62D00CB6569 /* TCWiiPad.xib in Resources */,
 				B904ACF42886AB06008B6BE9 /* ButtonMapping.storyboard in Resources */,
@@ -2510,16 +2504,6 @@
 				B99137AB28827A1700588446 /* ja */,
 			);
 			name = Core.strings;
-			sourceTree = "<group>";
-		};
-		B99137AE28827AD200588446 /* SettingsRoot.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B99137AD28827AD200588446 /* Base */,
-				B99137B028827B0400588446 /* en */,
-				B99137B228827B8700588446 /* ja */,
-			);
-			name = SettingsRoot.storyboard;
 			sourceTree = "<group>";
 		};
 		B99137B72882A58000588446 /* SoftwareList.storyboard */ = {

@@ -4,10 +4,10 @@
 import UIKit
 
 // Tier 1 "classic" programmatic replacement for Main.storyboard's tab bar
-// controller. Preserves the same two tabs (Games / Settings) driven by the
-// same SoftwareList.storyboard / SettingsRoot.storyboard the old scene
-// referenced — only the shell itself goes programmatic and gets the new
-// glass-simulated visual treatment.
+// controller. Preserves the same two tabs (Games / Settings) — Games still
+// roots into SoftwareList.storyboard, Settings now roots into the fully
+// programmatic SettingsRootViewController — with the new glass-simulated
+// visual treatment on the shell itself.
 final class DOLTabBarController: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,10 +23,8 @@ final class DOLTabBarController: UITabBarController {
       selectedImage: UIImage(systemName: "square.grid.2x2.fill")
     )
 
-    let settingsStoryboard = UIStoryboard(name: "SettingsRoot", bundle: nil)
-    guard let settingsNav = settingsStoryboard.instantiateInitialViewController() else {
-      fatalError("SettingsRoot.storyboard is missing its initial view controller")
-    }
+    let settingsNav = UINavigationController(rootViewController: SettingsRootViewController())
+    settingsNav.navigationBar.prefersLargeTitles = true
     settingsNav.tabBarItem = UITabBarItem(
       title: NSLocalizedString("Settings", comment: "Settings tab title"),
       image: UIImage(systemName: "gearshape"),
