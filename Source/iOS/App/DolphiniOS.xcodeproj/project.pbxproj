@@ -181,6 +181,8 @@
 		8D8FD5AF1E9A5A77AB4994D9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0111ABC1D22FE334E5A6B1 /* AboutViewController.swift */; };
 		747FEE2194367A70AA005395 /* DOLDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5417737B95C27D431081FE7F /* DOLDesignSystem.swift */; };
 		DFC789C489FBC564B4A07826 /* ConfigRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E586E0ABB6E2E0CD7DBC64D2 /* ConfigRootViewController.swift */; };
+		C8C765D1FC19B2B5E22D978C /* GraphicsRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11A0F2B3C6D4EA1B8F92D5C /* GraphicsRootViewController.swift */; };
+		C31540783785D998EAC86477 /* GraphicsBackendInfoBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = F3B8D0146E2A4C95B7118F4D /* GraphicsBackendInfoBridge.mm */; };
 		B9809C7C2A4A180700877579 /* ActionReplay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9809C7B2A4A180700877579 /* ActionReplay.storyboard */; };
 		B9809C802A4A190C00877579 /* ActionReplayCodeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9809C7F2A4A190C00877579 /* ActionReplayCodeViewController.mm */; };
 		B9809C832A4A22EB00877579 /* ActionReplayCodeEditViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9809C822A4A22EB00877579 /* ActionReplayCodeEditViewController.mm */; };
@@ -223,7 +225,6 @@
 		B9D938A728418AFE00B290FC /* TCManagerInterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9D938A628418AFD00B290FC /* TCManagerInterface.mm */; };
 		B9DC3E0627EFBD2F0084DAA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9DC3E0527EFBD2F0084DAA4 /* Assets.xcassets */; };
 		B9DC3E0927EFBD2F0084DAA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9DC3E0727EFBD2F0084DAA4 /* LaunchScreen.storyboard */; };
-		B9DC5FAB28849535004BD94A /* GraphicsRootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DC5FAA28849535004BD94A /* GraphicsRootViewController.mm */; };
 		B9DC5FAF28849640004BD94A /* GraphicsTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DC5FAE28849640004BD94A /* GraphicsTabViewController.m */; };
 		B9DC5FB3288497B0004BD94A /* GraphicsGeneralViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DC5FB2288497B0004BD94A /* GraphicsGeneralViewController.mm */; };
 		B9DC5FB62884A563004BD94A /* GraphicsBoolCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DC5FB52884A563004BD94A /* GraphicsBoolCell.mm */; };
@@ -612,8 +613,9 @@
 		B9DC3E0527EFBD2F0084DAA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9DC3E0827EFBD2F0084DAA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9DC3E0A27EFBD2F0084DAA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B9DC5FA928849535004BD94A /* GraphicsRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphicsRootViewController.h; sourceTree = "<group>"; };
-		B9DC5FAA28849535004BD94A /* GraphicsRootViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GraphicsRootViewController.mm; sourceTree = "<group>"; };
+		E11A0F2B3C6D4EA1B8F92D5C /* GraphicsRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsRootViewController.swift; sourceTree = "<group>"; };
+		A7C4E9F26B1D4820A3F5E6D8 /* GraphicsBackendInfoBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphicsBackendInfoBridge.h; sourceTree = "<group>"; };
+		F3B8D0146E2A4C95B7118F4D /* GraphicsBackendInfoBridge.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GraphicsBackendInfoBridge.mm; sourceTree = "<group>"; };
 		B9DC5FAD28849640004BD94A /* GraphicsTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphicsTabViewController.h; sourceTree = "<group>"; };
 		B9DC5FAE28849640004BD94A /* GraphicsTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphicsTabViewController.m; sourceTree = "<group>"; };
 		B9DC5FB1288497B0004BD94A /* GraphicsGeneralViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphicsGeneralViewController.h; sourceTree = "<group>"; };
@@ -1910,8 +1912,9 @@
 				B9DC5FB52884A563004BD94A /* GraphicsBoolCell.mm */,
 				B9DC5FB72884CB7C004BD94A /* GraphicsChoiceCell.h */,
 				B9DC5FB82884CB7C004BD94A /* GraphicsChoiceCell.mm */,
-				B9DC5FA928849535004BD94A /* GraphicsRootViewController.h */,
-				B9DC5FAA28849535004BD94A /* GraphicsRootViewController.mm */,
+				E11A0F2B3C6D4EA1B8F92D5C /* GraphicsRootViewController.swift */,
+				A7C4E9F26B1D4820A3F5E6D8 /* GraphicsBackendInfoBridge.h */,
+				F3B8D0146E2A4C95B7118F4D /* GraphicsBackendInfoBridge.mm */,
 				B9DC5FAD28849640004BD94A /* GraphicsTabViewController.h */,
 				B9DC5FAE28849640004BD94A /* GraphicsTabViewController.m */,
 			);
@@ -2340,6 +2343,8 @@
 				8D8FD5AF1E9A5A77AB4994D9 /* AboutViewController.swift in Sources */,
 				747FEE2194367A70AA005395 /* DOLDesignSystem.swift in Sources */,
 				DFC789C489FBC564B4A07826 /* ConfigRootViewController.swift in Sources */,
+				C8C765D1FC19B2B5E22D978C /* GraphicsRootViewController.swift in Sources */,
+				C31540783785D998EAC86477 /* GraphicsBackendInfoBridge.mm in Sources */,
 				B904AD322888FF17008B6BE9 /* MappingGroupEditViewController.mm in Sources */,
 				B991377C28808D9000588446 /* GameCubeSystemLanguageViewController.mm in Sources */,
 				B95AC52C2D29BA7F0048E48B /* AudioMuteSwitchMode.swift in Sources */,
@@ -2418,7 +2423,6 @@
 				B904AD3828890489008B6BE9 /* MappingGroupEditControlCell.m in Sources */,
 				B900A7AE27F27F36000361DD /* DolphinCoreService.mm in Sources */,
 				B900A7D527F61F3A000361DD /* GameFileCacheManager.mm in Sources */,
-				B9DC5FAB28849535004BD94A /* GraphicsRootViewController.mm in Sources */,
 				B9447B0128418F2600BC9110 /* TCJoystick.swift in Sources */,
 				B900A7BA27F4CB80000361DD /* DefaultsInitService.swift in Sources */,
 				B950CFC3296219C800197719 /* WiiSystemUpdateViewController.mm in Sources */,

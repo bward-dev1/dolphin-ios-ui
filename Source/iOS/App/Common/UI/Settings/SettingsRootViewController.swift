@@ -44,7 +44,7 @@ class SettingsRootViewController: UITableViewController {
         self?.navigationController?.pushViewController(ConfigRootViewController(), animated: true)
       }),
       .navigation(title: NSLocalizedString("Graphics", comment: "Settings row"), action: { [weak self] in
-        self?.pushSettingsStoryboard(named: "GraphicsSettings")
+        self?.navigationController?.pushViewController(GraphicsRootViewController(), animated: true)
       }),
       .navigation(title: NSLocalizedString("Controllers", comment: "Settings row"), action: { [weak self] in
         self?.pushSettingsStoryboard(named: "ControllersSettings")

@@ -1,20 +1,16 @@
-// Copyright 2022 DolphiniOS Project
+// Copyright 2026 DolphiniOS Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-#import "GraphicsRootViewController.h"
+#import "GraphicsBackendInfoBridge.h"
 
 #import "VideoCommon/VideoBackendBase.h"
 
-@interface GraphicsRootViewController ()
+@implementation GraphicsBackendInfoBridge
 
-@end
-
-@implementation GraphicsRootViewController
-
-- (void)viewDidLoad {
++ (void)populateBackendInfo {
   WindowSystemInfo wsi;
   wsi.type = WindowSystemType::iOS;
-  
+
   VideoBackendBase::PopulateBackendInfo(wsi);
 }
 
