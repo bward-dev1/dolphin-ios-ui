@@ -3,6 +3,7 @@
 
 #import "AudioSessionManager.h"
 #import "BootNoticeManager.h"
+#import "DebugRootViewController.h"
 #import "CoverArtSettingsViewController.h"
 #import "DolphinCoreService.h"
 #import "EmulationCoordinator.h"

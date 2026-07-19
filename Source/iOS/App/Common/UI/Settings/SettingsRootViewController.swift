@@ -61,7 +61,7 @@ class SettingsRootViewController: UITableViewController {
     ]),
     SettingsSection(rows: [
       .navigation(title: NSLocalizedString("Debug", comment: "Settings row"), action: { [weak self] in
-        self?.pushSettingsStoryboard(named: "DebugSettings")
+        self?.navigationController?.pushViewController(DebugRootViewController(), animated: true)
       }),
     ]),
   ]
