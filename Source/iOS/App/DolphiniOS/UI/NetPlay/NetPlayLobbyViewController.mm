@@ -3,6 +3,8 @@
 
 #import "NetPlayLobbyViewController.h"
 
+#import "Swift.h"
+
 #import "EmulationBootParameter.h"
 #import "EmulationViewController.h"
 #import "NetPlayManager.h"
@@ -33,6 +35,7 @@
   [super viewDidLoad];
 
   self.title = @"NetPlay Lobby";
+  self.view.backgroundColor = DOLDesignSystem.backgroundPrimary;
 
   self.navigationItem.hidesBackButton = YES;
   self.navigationItem.leftBarButtonItem =
@@ -45,12 +48,13 @@
 
   _hostCodeLabel = [[UILabel alloc] init];
   _hostCodeLabel.font = [UIFont monospacedSystemFontOfSize:32 weight:UIFontWeightBold];
+  _hostCodeLabel.textColor = DOLDesignSystem.accentSolid;
   _hostCodeLabel.textAlignment = NSTextAlignmentCenter;
   _hostCodeLabel.translatesAutoresizingMaskIntoConstraints = NO;
 
   _statusLabel = [[UILabel alloc] init];
-  _statusLabel.font = [UIFont systemFontOfSize:14];
-  _statusLabel.textColor = [UIColor secondaryLabelColor];
+  _statusLabel.font = DOLDesignSystem.fontCaption;
+  _statusLabel.textColor = DOLDesignSystem.textSecondary;
   _statusLabel.textAlignment = NSTextAlignmentCenter;
   _statusLabel.numberOfLines = 0;
   _statusLabel.translatesAutoresizingMaskIntoConstraints = NO;
@@ -72,11 +76,14 @@
 
   _chatView = [[UITextView alloc] init];
   _chatView.editable = NO;
-  _chatView.font = [UIFont systemFontOfSize:14];
+  _chatView.font = DOLDesignSystem.fontCaption;
+  _chatView.textColor = DOLDesignSystem.textPrimary;
+  _chatView.backgroundColor = DOLDesignSystem.backgroundSecondary;
   _chatView.translatesAutoresizingMaskIntoConstraints = NO;
-  _chatView.layer.borderColor = [UIColor separatorColor].CGColor;
+  _chatView.layer.borderColor = DOLDesignSystem.borderHairline.CGColor;
   _chatView.layer.borderWidth = 1;
-  _chatView.layer.cornerRadius = 8;
+  _chatView.layer.cornerRadius = DOLDesignSystem.radiusMD;
+  _chatView.layer.cornerCurve = kCACornerCurveContinuous;
   [_chatView.heightAnchor constraintEqualToConstant:120].active = YES;
 
   _chatInputField = [[UITextField alloc] init];
@@ -97,7 +104,13 @@
 
   _startButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [_startButton setTitle:@"Start Game" forState:UIControlStateNormal];
-  _startButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
+  [_startButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+  _startButton.titleLabel.font = DOLDesignSystem.fontHeadline;
+  _startButton.backgroundColor = DOLDesignSystem.accentSolid;
+  _startButton.layer.cornerRadius = DOLDesignSystem.radiusPill / 4;
+  _startButton.layer.cornerCurve = kCACornerCurveContinuous;
+  _startButton.contentEdgeInsets = UIEdgeInsetsMake(DOLDesignSystem.spacingSM, DOLDesignSystem.spacingLG,
+                                                      DOLDesignSystem.spacingSM, DOLDesignSystem.spacingLG);
   [_startButton addTarget:self action:@selector(startTapped) forControlEvents:UIControlEventTouchUpInside];
   _startButton.translatesAutoresizingMaskIntoConstraints = NO;
   _startButton.hidden = ![NetPlayManager shared].isHost;
@@ -202,6 +215,12 @@
   if (cell == nil) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"PlayerCell"];
   }
+
+  cell.backgroundColor = DOLDesignSystem.backgroundSecondary;
+  cell.textLabel.font = DOLDesignSystem.fontBody;
+  cell.textLabel.textColor = DOLDesignSystem.textPrimary;
+  cell.detailTextLabel.font = DOLDesignSystem.fontCaption;
+  cell.detailTextLabel.textColor = DOLDesignSystem.textSecondary;
 
   NetPlayPlayerInfo* player = _displayedPlayers[indexPath.row];
 

@@ -29,6 +29,7 @@
       [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                      target:self
                                                      action:@selector(cancelTapped)];
+  self.view.backgroundColor = DOLDesignSystem.backgroundPrimary;
   [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
   _games = [[GameFileCacheManager sharedManager] getGames];
 }
@@ -46,6 +47,10 @@
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath {
   UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+  cell.backgroundColor = DOLDesignSystem.backgroundSecondary;
+  cell.textLabel.font = DOLDesignSystem.fontBody;
+  cell.textLabel.textColor = DOLDesignSystem.textPrimary;
+
   GameFilePtrWrapper* wrapper = _games[indexPath.row];
   cell.textLabel.text = CppToFoundationString(wrapper.gameFile->GetInternalName());
   return cell;
@@ -94,6 +99,7 @@ typedef NS_ENUM(NSInteger, NPRow) {
   [super viewDidLoad];
 
   self.title = @"NetPlay";
+  self.view.backgroundColor = DOLDesignSystem.backgroundPrimary;
   [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 
   self.navigationItem.leftBarButtonItem =
@@ -135,13 +141,19 @@ typedef NS_ENUM(NSInteger, NPRow) {
 
   _statusLabel = [[UILabel alloc] init];
   _statusLabel.numberOfLines = 0;
-  _statusLabel.font = [UIFont systemFontOfSize:14];
-  _statusLabel.textColor = [UIColor secondaryLabelColor];
+  _statusLabel.font = DOLDesignSystem.fontCaption;
+  _statusLabel.textColor = DOLDesignSystem.textSecondary;
   _statusLabel.textAlignment = NSTextAlignmentCenter;
   _statusLabel.translatesAutoresizingMaskIntoConstraints = NO;
 
   _actionButton = [UIButton buttonWithType:UIButtonTypeSystem];
-  _actionButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
+  _actionButton.titleLabel.font = DOLDesignSystem.fontHeadline;
+  [_actionButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+  _actionButton.backgroundColor = DOLDesignSystem.accentSolid;
+  _actionButton.layer.cornerRadius = DOLDesignSystem.radiusPill / 4;
+  _actionButton.layer.cornerCurve = kCACornerCurveContinuous;
+  _actionButton.contentEdgeInsets = UIEdgeInsetsMake(DOLDesignSystem.spacingSM, DOLDesignSystem.spacingLG,
+                                                       DOLDesignSystem.spacingSM, DOLDesignSystem.spacingLG);
   [_actionButton addTarget:self action:@selector(actionTapped) forControlEvents:UIControlEventTouchUpInside];
   _actionButton.translatesAutoresizingMaskIntoConstraints = NO;
 
@@ -253,6 +265,7 @@ typedef NS_ENUM(NSInteger, NPRow) {
   }
 
   _actionButton.enabled = ready;
+  _actionButton.alpha = ready ? 1.0 : 0.5;
 }
 
 - (uint16_t)portValue {
@@ -265,6 +278,7 @@ typedef NS_ENUM(NSInteger, NPRow) {
 
 - (void)actionTapped {
   _actionButton.enabled = NO;
+  _actionButton.alpha = 0.5;
   [_spinner startAnimating];
   _statusLabel.text = @"Connecting...";
 
@@ -283,6 +297,7 @@ typedef NS_ENUM(NSInteger, NPRow) {
         [strongSelf.navigationController pushViewController:lobby animated:YES];
       } else {
         strongSelf->_actionButton.enabled = YES;
+        strongSelf->_actionButton.alpha = 1.0;
         strongSelf->_statusLabel.text = error ?: @"Something went wrong.";
       }
     });
