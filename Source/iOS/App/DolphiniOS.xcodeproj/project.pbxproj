@@ -180,6 +180,7 @@
 		C8AEB9FF56CD5495559AAD3A /* GlassMaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9CE2E6B435CE00542975E1 /* GlassMaterialView.swift */; };
 		747EECDFC90CBDB2A102C876 /* DOLTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09382C304A9F01E5056870D3 /* DOLTabBarController.swift */; };
 		717CF26E744B41AD6F054BCA /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1E4FCB3CB2951A3D34F42 /* OnboardingViewController.swift */; };
+		8D8FD5AF1E9A5A77AB4994D9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0111ABC1D22FE334E5A6B1 /* AboutViewController.swift */; };
 		B9809C7C2A4A180700877579 /* ActionReplay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9809C7B2A4A180700877579 /* ActionReplay.storyboard */; };
 		B9809C802A4A190C00877579 /* ActionReplayCodeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9809C7F2A4A190C00877579 /* ActionReplayCodeViewController.mm */; };
 		B9809C832A4A22EB00877579 /* ActionReplayCodeEditViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9809C822A4A22EB00877579 /* ActionReplayCodeEditViewController.mm */; };
@@ -526,6 +527,7 @@
 		1C9CE2E6B435CE00542975E1 /* GlassMaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassMaterialView.swift; sourceTree = "<group>"; };
 		09382C304A9F01E5056870D3 /* DOLTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOLTabBarController.swift; sourceTree = "<group>"; };
 		C0D1E4FCB3CB2951A3D34F42 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		AB0111ABC1D22FE334E5A6B1 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E658062BA35A905AEA93A57F /* DESIGN_TOKENS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DESIGN_TOKENS.md; sourceTree = "<group>"; };
 		73CB66B2D427E2AB66962501 /* DesignTokens.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DesignTokens.json; sourceTree = "<group>"; };
 		B9809C7B2A4A180700877579 /* ActionReplay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActionReplay.storyboard; sourceTree = "<group>"; };
@@ -1535,8 +1537,7 @@
 		B97C49AC297E6CE400E30877 /* About */ = {
 			isa = PBXGroup;
 			children = (
-				B97C49B0297E717C00E30877 /* AboutViewController.h */,
-				B97C49B1297E717C00E30877 /* AboutViewController.m */,
+				AB0111ABC1D22FE334E5A6B1 /* AboutViewController.swift */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -2345,6 +2346,7 @@
 				C8AEB9FF56CD5495559AAD3A /* GlassMaterialView.swift in Sources */,
 				747EECDFC90CBDB2A102C876 /* DOLTabBarController.swift in Sources */,
 				717CF26E744B41AD6F054BCA /* OnboardingViewController.swift in Sources */,
+				8D8FD5AF1E9A5A77AB4994D9 /* AboutViewController.swift in Sources */,
 				B904AD322888FF17008B6BE9 /* MappingGroupEditViewController.mm in Sources */,
 				B991377C28808D9000588446 /* GameCubeSystemLanguageViewController.mm in Sources */,
 				B95AC52C2D29BA7F0048E48B /* AudioMuteSwitchMode.swift in Sources */,

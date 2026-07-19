@@ -7,10 +7,10 @@ import UIKit
 // Tier 1 "classic" programmatic replacement for SettingsRoot.storyboard's
 // static table. Same three sections/rows and the same navigation behavior
 // as before — only the construction (programmatic vs. Interface Builder)
-// and visual styling (design-system tokens) changed. The five destination
-// screens this pushes/presents (About/Config/Graphics/Controllers/Debug)
-// are still storyboard-driven — converting those is future Settings-tree
-// work, out of scope for this pass.
+// and visual styling (design-system tokens) changed. Of the five
+// destination screens this pushes/presents, About is now programmatic too;
+// Config/Graphics/Controllers/Debug are still storyboard-driven — converting
+// those is future Settings-tree work, out of scope for this pass.
 private enum SettingsRow {
   case info(title: String, value: () -> String)
   case link(title: String, action: () -> Void)
@@ -88,10 +88,7 @@ class SettingsRootViewController: UITableViewController {
   }
 
   private func presentAboutSettings() {
-    guard let viewController = UIStoryboard(name: "AboutSettings", bundle: nil).instantiateInitialViewController() else {
-      return
-    }
-    present(viewController, animated: true)
+    present(AboutViewController.makePresentable(), animated: true)
   }
 
   // MARK: - UITableViewDataSource
@@ -153,10 +150,4 @@ class SettingsRootViewController: UITableViewController {
       action()
     }
   }
-
-  // Still required: AboutSettings.storyboard's close button unwinds to this
-  // selector by name. Unwind segues dismiss any modal presentation along the
-  // responder chain automatically — the empty body is intentional, matching
-  // the original storyboard-instantiated implementation.
-  @IBAction func unwindToSettings(_ seg: UIStoryboardSegue) {}
 }
