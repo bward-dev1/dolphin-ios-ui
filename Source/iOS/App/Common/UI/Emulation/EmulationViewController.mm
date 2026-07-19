@@ -69,7 +69,7 @@
     const bool is_interpreter_core = current_core == PowerPC::CPUCore::Interpreter || current_core == PowerPC::CPUCore::CachedInterpreter;
     
     if (![JitManager shared].acquiredJit && !is_interpreter_core) {
-      JitWaitViewController* jitController = [[JitWaitViewController alloc] initWithNibName:@"JitWait" bundle:nil];
+      JitWaitViewController* jitController = [[JitWaitViewController alloc] init];
       jitController.delegate = self;
       jitController.modalInPresentation = true;
       
@@ -119,7 +119,7 @@
 }
 
 - (void)showNKitWarning {
-  NKitWarningViewController* nkitController = [[NKitWarningViewController alloc] initWithNibName:@"NKitWarning" bundle:nil];
+  NKitWarningViewController* nkitController = [[NKitWarningViewController alloc] init];
   nkitController.delegate = self;
   nkitController.modalInPresentation = true;
   

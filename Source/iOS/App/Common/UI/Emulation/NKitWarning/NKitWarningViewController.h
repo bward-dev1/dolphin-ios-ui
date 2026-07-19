@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic, nullable) id<NKitWarningViewControllerDelegate> delegate;
 
-@property (weak, nonatomic) IBOutlet DOLSwitch* showSwitch;
+@property (strong, nonatomic, readonly) DOLSwitch* showSwitch;
 
 @end
 
