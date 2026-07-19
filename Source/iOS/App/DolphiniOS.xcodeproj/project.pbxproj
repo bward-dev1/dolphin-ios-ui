@@ -154,8 +154,6 @@
 		B974924429603A8A00794509 /* LegacyInputConfigMigrationService.mm in Sources */ = {isa = PBXBuildFile; fileRef = B974924329603A8A00794509 /* LegacyInputConfigMigrationService.mm */; };
 		B97492472960CD2B00794509 /* FirstRunInitializationService.mm in Sources */ = {isa = PBXBuildFile; fileRef = B97492462960CD2B00794509 /* FirstRunInitializationService.mm */; };
 		B97492492960F64300794509 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = B97492482960F64300794509 /* DefaultPreferences.plist */; };
-		B97C49AF297E6CFF00E30877 /* AboutSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B97C49AE297E6CFF00E30877 /* AboutSettings.storyboard */; };
-		B97C49B2297E717D00E30877 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97C49B1297E717C00E30877 /* AboutViewController.m */; };
 		B97C49B4297E7DB600E30877 /* AnalyticsNoticeViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97C49B3297E7DB600E30877 /* AnalyticsNoticeViewControllerDelegate.swift */; };
 		B97C49B6297F8B0D00E30877 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B97C49B5297F8B0D00E30877 /* UniformTypeIdentifiers.framework */; };
 		B97E4B492964CBA100B3EE9C /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = B97E4B482964CBA100B3EE9C /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -490,9 +488,6 @@
 		B97492482960F64300794509 /* DefaultPreferences.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
 		B976EDDF2D15DF4900F51C83 /* control-beta-rootless.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = "control-beta-rootless.in"; sourceTree = "<group>"; };
 		B976EDE02D15E0D200F51C83 /* control-normal-rootless.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = "control-normal-rootless.in"; sourceTree = "<group>"; };
-		B97C49AE297E6CFF00E30877 /* AboutSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutSettings.storyboard; sourceTree = "<group>"; };
-		B97C49B0297E717C00E30877 /* AboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		B97C49B1297E717C00E30877 /* AboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		B97C49B3297E7DB600E30877 /* AnalyticsNoticeViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsNoticeViewControllerDelegate.swift; sourceTree = "<group>"; };
 		B97C49B5297F8B0D00E30877 /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
 		B97E4B512965011C00B3EE9C /* FirebaseService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseService.h; sourceTree = "<group>"; };
@@ -1198,7 +1193,6 @@
 		B938835B287EBA5500910606 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				B97C49AD297E6CED00E30877 /* About */,
 				B93986FD287F8F0F008E8E47 /* Config */,
 				B904ACE5288666D3008B6BE9 /* Controllers */,
 				47BF4F5654710DA7BBA7791A /* CoverArt */,
@@ -1540,14 +1534,6 @@
 			isa = PBXGroup;
 			children = (
 				AB0111ABC1D22FE334E5A6B1 /* AboutViewController.swift */,
-			);
-			path = About;
-			sourceTree = "<group>";
-		};
-		B97C49AD297E6CED00E30877 /* About */ = {
-			isa = PBXGroup;
-			children = (
-				B97C49AE297E6CFF00E30877 /* AboutSettings.storyboard */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -2167,7 +2153,6 @@
 				B9EFF8532E7F56790029F016 /* AppIcon_Glass.icon in Resources */,
 				B9447B042841901200BC9110 /* TCGameCubePad.xib in Resources */,
 				B9447B09284192FA00BC9110 /* DolphinAssets.xcassets in Resources */,
-				B97C49AF297E6CFF00E30877 /* AboutSettings.storyboard in Resources */,
 				B950CFC629621AFC00197719 /* WiiSystemUpdate.storyboard in Resources */,
 				B9DC3E0627EFBD2F0084DAA4 /* Assets.xcassets in Resources */,
 				B97492492960F64300794509 /* DefaultPreferences.plist in Resources */,
@@ -2399,7 +2384,6 @@
 				1BC1C3385D07ED4D7924D6AA /* CoverArtPickerViewController.mm in Sources */,
 				0A7F40831922F9035D8B8AC3 /* CoverArtPreviewViewController.mm in Sources */,
 				FE58B35FFB5E8AF1E517863B /* GameLibraryPreferences.mm in Sources */,
-				B97C49B2297E717D00E30877 /* AboutViewController.m in Sources */,
 				B939872E2880896D008E8E47 /* ConfigGameCubeViewController.mm in Sources */,
 				B9D93897283ECE1100B290FC /* DOLUIKitSwitch.m in Sources */,
 				B904ACD92885E7DE008B6BE9 /* GraphicsHacksViewController.mm in Sources */,
